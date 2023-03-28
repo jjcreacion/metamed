@@ -1,0 +1,68 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <ion-icon class="zmdi zmdi-close" (click)="dismiss()"></ion-icon>
+                <ion-icon class="zmdi zmdi-more-vert end ion-text-end" (click)="setViewType('active')"></ion-icon>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <div [ngClass]="viewType == 'active' ? 'option_container active':'option_container'" (click)="setViewType(null)">
+        <div class="option" (click)="setViewType(null)">
+            <!-- 			<h2>{{'profile_setting' | translate}}</h2>-->
+            <h2>{{'delete' | translate}}</h2>
+        </div>
+    </div>
+
+    <div class="video_view">
+        <video id="myvideoinner" class="videoPlayer" poster="assets/imgs/25.gif"></video>
+        <ion-slides [options]="slideOptions2" #videosliderinner (ionSlideDidChange)="slideChanged2()"
+            (ionSlideTouchEnd)="resumePlaying2()" (ionSlideTouchStart)="pausePlaying2()">
+            <ion-slide *ngFor="let video of videosToShow; let i = index;">
+                <div class="video_option">
+                    <div class="details d-flex">
+                        <div class="text_box">
+                            <h2 (click)="user_profile()">@emiliwilliamson</h2>
+                            <p (click)="videos_list()">
+                                Dance like no one watching #dancetime #dancigqueen
+                                <i>{{'see_more' | translate}}</i>
+                            </p>
+                        </div>
+
+                        <div class="other_details end">
+                            <h3 class="ion-text-center">
+                                <ion-icon class="zmdi zmdi-mail-reply"></ion-icon>
+                                1.2k
+                            </h3>
+                            <h3 (click)="comment()">
+                                <ion-icon class="zmdi zmdi-comment-outline"></ion-icon>
+                                287
+                            </h3>
+                            <h3 [ngClass]="favorite_icon_2 ? 'active' : 'favorite_icons'"
+                                (click)="toggleFavorite_icon_2()">
+                                <span class="favorite_icon">
+                                    <ion-icon class="zmdi zmdi-favorite-outline"></ion-icon>
+                                    <ion-icon class="zmdi zmdi-favorite"></ion-icon>
+                                </span>
+                                8.2
+                            </h3>
+                            <div class="user_profile">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/2.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-plus"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_stick">
+                        <div class="video_stick_active" [style.width]="video.progress+'%'"></div>
+                        <!-- <div class="video_stick_active" style="width: 70%"></div> -->
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</ion-content>

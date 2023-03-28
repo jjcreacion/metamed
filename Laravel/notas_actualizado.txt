@@ -1,0 +1,13 @@
+Aquí dejo el link de la documentación del SDK y el foro oficial:
+
+https://learn.microsoft.com/en-us/gaming/playfab/sdks/php/
+https://community.playfab.com/index.html
+
+
+Envio nuevamente el proyecto, con los archivos de monolog dentro de la carpeta vendor.
+
+Ya conecta con la cuenta de playfab y tenemos de ejemplo el consumo getPlayerTags y getPlayerProfile, más bastantes funciones adicionales en el SDK.
+
+En la vista principal del proyecto de Laravel aparece el formulario de prueba, dejé los valores necesarios en Harcode en los inputs para facilitar las pruebas. 
+
+

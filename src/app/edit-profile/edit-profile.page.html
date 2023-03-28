@@ -1,0 +1,83 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <h3 class="end" (click)="tabs()">{{'save' | translate}}</h3>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+
+    <div class="profile_img">
+        <div class="img_box center_img animate__animated animate__fadeInUp">
+            <img src="assets/imgs/user_profile.jpg" class="crop_img">
+        </div>
+        <h2 class="ion-text-center">{{'change_profile_pic' | translate}}</h2>
+    </div>
+
+    <ion-segment lines="none" mode="md" (ionChange)="segmentChanged()" [(ngModel)]="segment">
+        <ion-segment-button value="0" mode="md">
+            <ion-label>{{'profile_info' | translate}}</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="1" mode="md">
+            <ion-label>{{'account_info' | translate}}</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content fullscreen class="bg_color">
+    <ion-slides #slides (ionSlideDidChange)="slideChanged()">
+        <ion-slide>
+            <div class="tab_container">
+                <div class="form">
+                    <ion-list lines="none">
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label mode="md" position="floating">{{"bio" | translate}}</ion-label>
+                            <ion-textarea mode="md" rows="2" type="name" value="The content creator and food lover. Love to make food making videos via this app"></ion-textarea>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label mode="md" position="floating">{{"instagram_id" | translate}}</ion-label>
+                            <ion-input mode="md" type="name" value="@samanthasmith"></ion-input>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label mode="md" position="floating">{{"facebook_id" | translate}}</ion-label>
+                            <ion-input mode="md" type="name" value="@samanth.asmith1"></ion-input>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label mode="md" position="floating">{{"twitter_id" | translate}}</ion-label>
+                            <ion-input mode="md" type="name" value="@samanth.asmith1"></ion-input>
+                        </ion-item>
+                    </ion-list>
+                </div>
+            </div>
+        </ion-slide>
+
+        <ion-slide>
+            <div class="tab_container">
+                <div class="form">
+                    <ion-list lines="none">
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label mode="md" position="floating">{{"full_name" | translate}}</ion-label>
+                            <ion-input mode="md" type="name" value="Samantha Smith"></ion-input>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label mode="md" position="floating">{{"email" | translate}}</ion-label>
+                            <ion-input mode="md" type="email" value="@samanthasmith@mail.com"></ion-input>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                            <ion-label mode="md" position="floating">{{"phone_number" | translate}}</ion-label>
+                            <ion-input mode="md" type="text" value="+1 987 654 3210"></ion-input>
+                        </ion-item>
+                    </ion-list>
+                </div>
+            </div>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

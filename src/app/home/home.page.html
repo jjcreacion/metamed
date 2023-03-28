@@ -1,0 +1,69 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <!--        <ion-title>home</ion-title>-->
+        <div class="d-flex">
+            <ion-segment [(ngModel)]="tab" lines="none" mode="md" (ionChange)="onSegmentChange()">
+                <ion-segment-button value="following" mode="md" class="active">
+                    <ion-label>{{'following' | translate}}</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="related" mode="md">
+                    <ion-label>{{'related' | translate}}</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+
+            <div class="buy_this_app end" *ngIf="config.demoMode" (click)="buyappalert()">
+                <h2>
+                    <!--                    <ion-icon class="zmdi zmdi-mall"></ion-icon>-->
+                    {{"buy_this_app" | translate}}
+                </h2>
+            </div>
+        </div>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="bg_color">
+    <div class="video_view">
+        <video id="myvideo" class="videoPlayer" poster="assets/imgs/25.gif"></video>
+        <ion-slides [options]="slideOptions1" #videoslider (ionSlideDidChange)="slideChanged1()" (ionSlideTouchEnd)="resumePlaying1()" (ionSlideTouchStart)="pausePlaying1()">
+            <ion-slide *ngFor="let video of videosToShow; let i = index;">
+                <div class="video_option">
+                    <div class="details d-flex">
+                        <div class="text_box">
+                            <h2 (click)="user_profile()">@emiliwilliamson</h2>
+                            <p (click)="videos_list()">
+                                Dance like no one watching #dancetime #dancigqueen
+                                <i>{{'see_more' | translate}}</i>
+                            </p>
+                        </div>
+
+                        <div class="other_details end">
+                            <h3 class="ion-text-center">
+                                <ion-icon class="zmdi zmdi-mail-reply"></ion-icon>
+                                1.2k
+                            </h3>
+                            <h3 (click)="comment()">
+                                <ion-icon class="zmdi zmdi-comment-outline"></ion-icon>
+                                287
+                            </h3>
+                            <h3 [ngClass]="favorite_icon_2 ? 'active' : 'favorite_icons'" (click)="toggleFavorite_icon_2()">
+                                <span class="favorite_icon">
+                                    <ion-icon class="zmdi zmdi-favorite-outline"></ion-icon>
+                                    <ion-icon class="zmdi zmdi-favorite"></ion-icon>
+                                </span> 8.2
+                            </h3>
+                            <div class="user_profile">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/2.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-plus"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_stick">
+                        <div class="video_stick_active" [style.width]="video.progress+'%'"></div>
+                        <!-- <div class="video_stick_active" style="width: 70%"></div> -->
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</ion-content>

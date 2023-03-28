@@ -1,0 +1,238 @@
+<ion-header class="bg_transparent">
+    <!-- <ion-toolbar [class.show-background]="showToolbar"> -->
+    <ion-toolbar class="show-background">
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <ion-icon class="zmdi zmdi-more-vert end ion-text-end"></ion-icon>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content fullscreeen [scrollEvents]="true" (ionScroll)="onScroll($event)"> -->
+<ion-content fullscreeen>
+    <div class="profile_box ion-text-center">
+        <div class="img_box center_img animate__animated animate__fadeInUp">
+            <img src="assets/imgs/5.png" class="crop_img">
+        </div>
+        <div class="animate__animated animate__fadeInUp" style="width: 100%">
+            <h2>Emili Williamson</h2>
+            <h3>@emilithedancer</h3>
+            <div class="icon_box d-flex">
+                <ion-icon class="zmdi zmdi-facebook"></ion-icon>
+                <ion-icon class="zmdi zmdi-twitter"></ion-icon>
+                <ion-icon class="zmdi zmdi-instagram"></ion-icon>
+            </div>
+            <div class="about">
+                <p>Profesinal Dancer & choreographer<br>with contemporary & clasical style</p>
+            </div>
+        </div>
+        <div class="btn_box animate__animated animate__fadeInUp">
+            <ion-row>
+                <ion-col size="6">
+                    <ion-button size="large" expand="block" fill="outline" class="btn" (click)="chat_screen()">{{'message' | translate}}</ion-button>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-button size="large" expand="block" fill="solid" class="btn" (click)="followers()">{{'follow' | translate}}</ion-button>
+                </ion-col>
+            </ion-row>
+        </div>
+        <div class="other_details animate__animated animate__fadeInUp">
+            <ion-row>
+                <ion-col size="4">
+                    <h2>2.5m</h2>
+                    <h3>{{'liked' | translate}}</h3>
+                </ion-col>
+                <ion-col size="4">
+                    <h2>78k</h2>
+                    <h3>{{'followers' | translate}}</h3>
+                </ion-col>
+                <ion-col size="4">
+                    <h2>23.1k</h2>
+                    <h3>{{'following' | translate}}</h3>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+
+    <div class="my_videos animate__animated animate__fadeInUp">
+        <div class="icon_box d-flex">
+            <ion-icon class="zmdi zmdi-view-dashboard ion-text-center"></ion-icon>
+            <ion-icon class="zmdi zmdi-favorite-outline ion-text-center"></ion-icon>
+        </div>
+
+        <div class="gallery">
+            <ion-row>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d1.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            1.2m
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d2.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            2.8m
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d3.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            98k
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d4.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            1.2m
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d1.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            1.2m
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d2.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            2.8m
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d3.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            98k
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d4.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            1.2m
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d1.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            1.2m
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d2.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            2.8m
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d3.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            98k
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d4.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            1.2m
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d1.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            1.2m
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d2.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            2.8m
+                        </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4" (click)="video_view()">
+                    <div class="item_box animate__animated animate__zoomIn">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/d3.png" class="crop_img">
+                        </div>
+                        <p d-flex>
+                            <ion-icon class="zmdi zmdi-eye ion-text-center"></ion-icon>
+                            98k
+                        </p>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+
+</ion-content>

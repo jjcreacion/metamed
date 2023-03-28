@@ -1,0 +1,186 @@
+ion-header {
+    background: var(--bg-color);
+    min-height: 135px;
+
+    ion-toolbar {
+        ion-title {
+            .title_inner {
+                height: 70px;
+
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    color: var(--primary);
+                    font-size: 1.14rem;
+                    letter-spacing: 0;
+                }
+            }
+        }
+    }
+
+    .profile_img {
+        display: block;
+        position: relative;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: -39px;
+
+        .img_box {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+
+        h2 {
+            margin: 0;
+            color: var(--text-light);
+            font-size: .95rem;
+            margin-top: 16px;
+        }
+    }
+
+    ion-segment {
+        border: none !important;
+        background: none !important;
+        width: fit-content;
+
+        ion-segment-button {
+            background: none !important;
+            position: relative;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-light) !important;
+            text-transform: unset !important;
+            letter-spacing: 0;
+            --background-checked: var(--transparent) !important;
+            --background-focused: var(--transparent) !important;
+            --border-width: 0 !important;
+            --border-radius: 0 !important;
+            box-shadow: none !important;
+            --indicator-color: var(--transparent) !important;
+            --indicator-box-shadow: none !important;
+            --ripple-color: var(--transparent) !important;
+            --color: #b3b3b3 !important;
+            --color-checked: var(--primary) !important;
+            --color-hover: var(--primary) !important;
+            --background-hover: var(--transparent) !important;
+
+            &.segment-button-checked {
+                color: var(--primary) !important;
+                opacity: 1;
+
+                &.active {
+                    ion-label {
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.animate__animated.animate__fadeInUp {
+    &:nth-child(1) {
+        --animate-duration: .15s;
+    }
+
+    &:nth-child(2) {
+        --animate-duration: .2s;
+    }
+
+    &:nth-child(3) {
+        --animate-duration: .25s;
+    }
+
+    &:nth-child(4) {
+        --animate-duration: .3s;
+    }
+
+    &:nth-child(5) {
+        --animate-duration: .35s;
+    }
+
+    &:nth-child(6) {
+        --animate-duration: .4s;
+    }
+
+    &:nth-child(7) {
+        --animate-duration: .45s;
+    }
+
+    &:nth-child(8) {
+        --animate-duration: .5s;
+    }
+
+    &:nth-child(9) {
+        --animate-duration: .55s;
+    }
+
+    &:nth-child(10) {
+        --animate-duration: .6s;
+    }
+
+    &:nth-child(11) {
+        --animate-duration: .65s;
+    }
+
+    &:nth-child(12) {
+        --animate-duration: .7s;
+    }
+
+    &:nth-child(13) {
+        --animate-duration: .5s;
+    }
+
+    &:nth-child(14) {
+        --animate-duration: .5s;
+    }
+
+    &:nth-child(15) {
+        --animate-duration: .5s;
+    }
+}
+
+.form {
+    padding-top: 10px;
+
+    h2 {
+        margin: 0;
+        color: var(--primary);
+        font-size: 1.2rem;
+        padding: 13px 0 12px 0;
+    }
+
+    ion-item {
+        ion-textarea {
+            margin: 0;
+        }
+
+        &.item-datetime {
+            ion-icon {
+                font-size: 1.3rem;
+                position: relative;
+                top: 26px;
+            }
+        }
+    }
+}
+
+ion-slides {
+    ion-slide {
+        display: block;
+        min-height: calc(100vh - 214px);
+        max-height: calc(100vh - 214px);
+        overflow: hidden;
+        overflow-y: auto;
+        text-align: initial;
+        position: relative;
+
+    }
+}

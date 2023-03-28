@@ -1,0 +1,95 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'sign_up_now' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_color">
+    <form [formGroup]="ionicForm" novalidate>
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <ion-label mode="md" position="floating">{{"full_name" | translate}}</ion-label>
+                <ion-input mode="md" type="name" [(ngModel)]="user.name" formControlName="userName"></ion-input>
+            </ion-item>
+
+            <span class="error-input"
+            *ngIf="isSubmitted && errorControl.userName.errors?.required">
+              {{ "Please enter your name" | translate}}
+            </span>
+            <span class="error-input"
+                *ngIf="isSubmitted && errorControl.userName.errors?.minlength">
+              {{ "Verify your phone number" | translate}} 
+                <br>
+            </span>
+           
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <ion-label mode="md" position="floating">{{"email" | translate}}</ion-label>
+                <ion-input mode="md" type="email" [(ngModel)]="user.email" formControlName="userEmail"></ion-input>
+            </ion-item>
+
+            <span class="error-input"
+            *ngIf="isSubmitted && errorControl.userEmail.errors?.required">
+              {{ "Please enter your email" | translate}}
+            </span>
+            <span class="error-input"
+                *ngIf="isSubmitted && errorControl.userEmail.errors?.minlength">
+              {{ "Verify your email" | translate}} 
+                <br>
+            </span>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <ion-label mode="md" position="floating">{{"phone_number" | translate}}</ion-label>
+                <ion-input mode="md" type="text" [(ngModel)]="user.phone" formControlName="userPhone"></ion-input>
+            </ion-item>
+
+            <span class="error-input"
+            *ngIf="isSubmitted && errorControl.userPhone.errors?.required">
+              {{ "Please enter your phone" | translate}}
+            </span>
+            <span class="error-input"
+                *ngIf="isSubmitted && errorControl.userPhone.errors?.minlength">
+              {{ "Verify your phone number" | translate}} 
+                <br>
+            </span>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <ion-label mode="md" position="floating">{{"Password" | translate}}</ion-label>
+                <ion-input mode="md" type="text" [(ngModel)]="user.password" formControlName="userPassword"></ion-input>
+            </ion-item>
+
+            <span class="error-input"
+            *ngIf="isSubmitted && errorControl.userPassword.errors?.required">
+              {{ "Please enter your Password" | translate}}
+            </span>
+            <span class="error-input"
+                *ngIf="isSubmitted && errorControl.userPassword.errors?.minlength">
+              {{ "Minimun 8 charts" | translate}} 
+                <br>
+            </span>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <ion-label mode="md" position="floating">{{"Verify Password" | translate}}</ion-label>
+                <ion-input mode="md" type="text" [(ngModel)]="password2" formControlName="userPassword2"></ion-input>
+            </ion-item>
+
+            <span class="error-input"
+            *ngIf="isSubmitted && errorControl.userPassword2.errors?.required">
+              {{ "Please verify your Password" | translate}}
+            </span>
+            <span class="error-input"
+                *ngIf="isSubmitted && errorControl.userPassword2.errors?.minlength">
+              {{ "Minimun 8 charts" | translate}} 
+                <br>
+            </span>
+        </ion-list>
+    </div>
+  </form>  
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button size="large" expand="block" class="btn" (click)="verification()">{{'continue' | translate}}</ion-button>
+</ion-footer>

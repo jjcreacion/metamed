@@ -1,0 +1,70 @@
+<!--
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{'sign_text' | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+
+<ion-content class="bg_color" fullscreen>
+    <div class="bg_img center_img">
+        <img src="assets/imgs/video_1.png" class="crop_img">
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+
+    <form [formGroup]="ionicForm" novalidate>
+                  
+        <div class="form">
+        <h2 class="d-flex"><span><ion-icon name="log-in-outline"></ion-icon>{{'Login' | translate}}</span>
+        </h2>
+        
+        <ion-list lines="none">
+
+        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+            <ion-label mode="md" position="floating">{{"Enter email or phone" | translate}}</ion-label>
+            <ion-input mode="md" type="text" [(ngModel)]="user" formControlName="inputUser"></ion-input>
+        </ion-item> 
+        <span class="error-input"
+            *ngIf="isSubmitted && errorControl.inputUser.errors?.required">
+                {{ "Please enter your user" | translate}}
+            </span>
+            <span class="error-input"
+                *ngIf="isSubmitted && errorControl.inputUser.errors?.minlength">
+                {{ "Verify your user" | translate}} 
+                <br>
+        </span>
+
+        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+            <ion-label mode="md" position="floating">{{"Enter password" | translate}}</ion-label>
+            <ion-input mode="md" [type]="showPassword ? 'text': 'password'" [(ngModel)]="password" formControlName="inputPassword"></ion-input>
+            <ion-icon class="icon-yellow" slot="end" [name]="passwordToggleIcon" (click)="togglePassword()"></ion-icon>
+        </ion-item> 
+        <span class="error-input"
+            *ngIf="isSubmitted && errorControl.inputPassword.errors?.required">
+                {{ "Please enter your password" | translate}}
+            </span>
+            <span class="error-input"
+                *ngIf="isSubmitted && errorControl.inputPassword.errors?.minlength">
+                {{ "Verify your password" | translate}} 
+                <br>
+        </span>
+        
+        </ion-list>
+       
+        <ion-button size="large" expand="block" class="btn animate__animated animate__fadeInUp" (click)="submitForm()" >{{'continue' | translate}}</ion-button>
+        <h3 class="ion-text-center"><span>You do not have an account?<a (click)="routeTo('/sign-up/')">{{' Sign up' | translate}}</a></span></h3>
+
+            <div class="social_login ">
+            <h3 class="ion-text-center animate__animated animate__fadeInUp">{{'or_continue_with' | translate}}</h3>
+            <ion-button size="large" expand="block" class="btn fb_btn animate__animated animate__fadeInUp" (click)="loginFacebook()">
+                <img src="assets/imgs/fb.png"> {{'continue_with_facebook' | translate}}
+            </ion-button>
+            <ion-button size="large" expand="block" class="btn google_btn animate__animated animate__fadeInUp" (click)="loginGoogle()">
+                <img src="assets/imgs/google.png"> {{'google_account' | translate}}
+            </ion-button>
+        </div>
+    </div>
+    </form>
+</ion-footer>

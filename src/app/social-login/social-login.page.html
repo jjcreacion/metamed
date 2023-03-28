@@ -1,0 +1,37 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+        </ion-title>
+    </ion-toolbar>
+    <div class="profile_img form animate__animated animate__fadeInUp">
+        <div class="img_box center_img">
+            <img src="assets/imgs/user_profile.jpg" class="crop_img">
+        </div>
+        <h2 class="ion-text-center">{{'change_profile_pic' | translate}}</h2>
+    </div>
+</ion-header>
+<ion-content class="bg_color" fullscreen>
+    <div class="form animate__animated animate__fadeInUp">
+        <h3>
+            {{"hey" | translate}} Samanatha,
+            <br> {{"you_are_almost_in" | translate}}.
+            <br> {{"provid_your_phone_number" | translate}}
+            <br> {{"for_verification" | translate}}.
+        </h3>
+        <ion-list lines="none">
+            <ion-item lines="none">
+                <ion-label mode="md" position="floating">{{"phone_number" | translate}}</ion-label>
+                <ion-input mode="md" type="text" value="+1 987 654 3210"></ion-input>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-lines animate__animated animate__fadeInUp">
+    <div class="form">
+        <ion-button size="large" expand="block" class="btn" (click)="verification()">{{'continue' | translate}}</ion-button>
+    </div>
+</ion-footer>

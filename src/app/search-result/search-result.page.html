@@ -1,0 +1,1998 @@
+<ion-header>
+    <ion-toolbar>
+        <div class="search_box d-flex">
+            <ion-buttons slot="start">
+                <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+            </ion-buttons>
+            <ion-searchbar mode="md" class="ion-no-padding" searchIcon="hide" placeholder="{{'search' | translate}}"></ion-searchbar>
+        </div>
+    </ion-toolbar>
+
+    <ion-segment  (ionChange)="segmentChanged()" [(ngModel)]="segment" ines="none" mode="md">
+        <ion-segment-button value="0" mode="md">
+            <ion-label>{{'videos' | translate}}</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="1" mode="md">
+            <ion-label>{{'user' | translate}}</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <div class="tab_container">
+        <ion-slides #slides (ionSlideDidChange)="slideChanged()">
+            <ion-slide>
+                <div class="video_row">
+                    <ion-row>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f1.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f3.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    2.8m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f4.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    98k
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f2.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f1.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f2.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f1.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f3.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    2.8m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f4.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    98k
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f2.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f1.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f4.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f1.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f3.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    2.8m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f4.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    98k
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f2.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f1.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f2.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f1.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f3.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    2.8m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f4.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    98k
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f2.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f1.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f4.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f1.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f3.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    2.8m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f4.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    98k
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f2.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f1.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f2.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f1.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f3.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    2.8m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f4.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    98k
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f2.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f1.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="4" (click)="video_view()">
+                            <div class="item_box animate__animated animate__zoomIn">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/f4.png" class="crop_img">
+                                </div>
+                                <p>
+                                    <ion-icon class="zmdi zmdi-eye" text-center></ion-icon>
+                                    1.2m
+                                </p>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </ion-slide>
+
+
+
+
+
+
+            <ion-slide>
+                <ion-list lines="none">
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Food Master</h2>
+                                    <h3 class="d-flex"><span>@georgeamith</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foody Girl</h2>
+                                <h3 class="d-flex"><span>@emilliwilliamson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Foodzila</h2>
+                                <h3 class="d-flex"><span>@iamkesha007</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindahere</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>@opuslabs </span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>@lingtong</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>#usuzsmith</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>@rohanpatel</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="user_profile()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>@lindajohnson</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</ion-content>

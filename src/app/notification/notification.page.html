@@ -1,0 +1,357 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-segment lines="none" mode="md" (ionChange)="segmentChanged()" [(ngModel)]="segment">
+            <ion-segment-button value="0" mode="md">
+                <ion-label>{{'notifications' | translate}}</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="1" mode="md" class="active">
+                <ion-label>{{'messages' | translate}}</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+    <div class="tab_container">
+        <ion-slides #slides (ionSlideDidChange)="slideChanged()">
+            <ion-slide>
+                <ion-list lines="none">
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/1.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <div class="text_box">
+                                    <h2>Geo rge Smith</h2>
+                                    <h3 class="d-flex"><span>liked your video.</span> <span class="notifications_at" text-end>5m ago</span></h3>
+                                </div>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/d1.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-favorite"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/2.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Emili Wiliamson</h2>
+                                <h3 class="d-flex"><span>commented on your video. </span> <span class="notifications_at" text-end>5m ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/l1.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-comment-alt"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Kesha Taylor</h2>
+                                <h3 class="d-flex"><span>liked your video.</span> <span class="notifications_at" text-end>5m ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/l3.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-favorite"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>start following you. </span> <span class="notifications_at" text-end>5m ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/1.png" class="crop_img" style="height: 35px;">
+                                </div>
+                                <ion-icon class="zmdi zmdi-plus"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>commented on your video. </span> <span class="notifications_at" text-end>3h ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/l1.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-comment-alt"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>liked your video.</span> <span class="notifications_at" text-end>5m ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/d2.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-favorite"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span> <span class="notifications_at" text-end>5m ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/l3.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-favorite"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>liked your video.</span> <span class="notifications_at" text-end>5m ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/d1.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-favorite"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>liked your video.</span> <span class="notifications_at" text-end>5m ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/l1.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-favorite"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>start following you. </span> <span class="notifications_at" text-end>5m ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/1.png" class="crop_img" style="height: 35px;">
+                                </div>
+                                <ion-icon class="zmdi zmdi-plus"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>commented on your video. </span> <span class="notifications_at" text-end>3h ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/l1.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-comment-alt"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>liked your video.</span> <span class="notifications_at" text-end>5m ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/d2.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-favorite"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/7.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Tosh Williamson</h2>
+                                <h3 class="d-flex"><span>liked your video.</span> <span class="notifications_at" text-end>5m ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/l3.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-favorite"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Usuz Smith</h2>
+                                <h3 class="d-flex"><span>liked your video.</span> <span class="notifications_at" text-end>5m ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/d1.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-favorite"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/9.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Rohan Patel</h2>
+                                <h3 class="d-flex"><span>liked your video.</span> <span class="notifications_at" text-end>5m ago</span></h3>
+                            </div>
+                            <div class="img_container animate__animated animate__zoomIn end">
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/l1.png" class="crop_img">
+                                </div>
+                                <ion-icon class="zmdi zmdi-favorite"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+
+            <ion-slide>
+                <ion-list class="messages" lines="none">
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="chat_screen()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/8.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Emili Wiliamson</h2>
+                                <h3 class="d-flex"><span>Hey, I like your videos. </span> <span class="notifications_at end" text-end>5m ago</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="chat_screen()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/3.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Kesha Taylor</h2>
+                                <h3 class="d-flex"><span>Yes I use my phone.</span> <span class="notifications_at end" text-end>5m ago</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="chat_screen()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/4.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Linda Johnson</h2>
+                                <h3 class="d-flex"><span>No worries. will do it</span> <span class="notifications_at end" text-end>5m ago</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="chat_screen()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/5.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Opus Labs</h2>
+                                <h3 class="d-flex"><span>Oh thank you for you worlds.</span> <span class="notifications_at end" text-end>1d ago</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated animate__fadeInUp" (click)="chat_screen()">
+                        <div class="item_inner d-flex">
+                            <div class="avatar_img_box center_img">
+                                <img src="assets/imgs/6.png" class="crop_img">
+                            </div>
+                            <div class="text_box">
+                                <h2>Ling Tong</h2>
+                                <h3 class="d-flex"><span>Alredy liked it.</span> <span class="notifications_at end" text-end>1w ago</span></h3>
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</ion-content>

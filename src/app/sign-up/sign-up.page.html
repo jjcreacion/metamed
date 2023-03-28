@@ -1,0 +1,111 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'sign_up_now' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_color">
+    
+     <!--
+        <ion-segment value="email">
+        <ion-segment-button value="email">
+          <ion-label>With Email</ion-label>
+          <ion-icon name="mail"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="phone">
+          <ion-label>With Phone</ion-label>
+          <ion-icon name="call"></ion-icon>
+        </ion-segment-button>
+      </ion-segment>
+
+   <ion-segment value="buttons">
+        <ion-segment-button (click)="changeSlide(0)">
+          <ion-label><h3 style="color: #0DE8D1;"><span>With Email <ion-icon name="mail-outline"></ion-icon></span></h3></ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="changeSlide(1)">
+          <ion-label><h3 style="color: #0DE8D1;"><span>With Phone<ion-icon name="call-outline"></ion-icon></span></h3></ion-label>
+        </ion-segment-button>
+    </ion-segment>
+   
+      <ion-slides [options]="slideOpts" #slides class="swiper-no-swiping">
+        <ion-slide>
+            <div class="form">
+                <ion-list lines="none">
+                    <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                        <ion-label mode="md" position="floating">{{"Email" | translate}}</ion-label>
+                        <ion-input mode="md" type="name" value="samanthasmith@mail.com"></ion-input>
+                    </ion-item>
+        
+        
+                    <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                        <ion-label mode="md" position="floating">{{"Password" | translate}}</ion-label>
+                        <ion-input mode="md" type="email" value="*********"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </div>    
+        </ion-slide>
+        <ion-slide>
+            <div class="form">
+                <ion-list lines="none">
+                    <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                        <ion-label mode="md" position="floating">{{"Phone" | translate}}</ion-label>
+                        <ion-input mode="md" type="name" value="+51945278724"></ion-input>
+                    </ion-item>
+        
+        
+                    <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                        <ion-label mode="md" position="floating">{{"Password" | translate}}</ion-label>
+                        <ion-input mode="md" type="email" value="**********"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </div>
+        </ion-slide>
+    </ion-slides>
+ -->
+    <div class="form">
+        <form [formGroup]="ionicForm" novalidate>
+      
+        <ion-list lines="none">
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <ion-label mode="md" position="floating">{{"Email" | translate}}</ion-label>
+                <ion-input mode="md" type="text" [(ngModel)]="email" formControlName="inputEmail"></ion-input>
+            </ion-item>
+                <span class="error-input"
+                *ngIf="isSubmitted && errorControl.inputEmail.errors?.required">
+                    {{ "Please enter your user" | translate}}
+                </span>
+                <span class="error-input"
+                    *ngIf="isSubmitted && errorControl.inputEmail.errors?.minlength">
+                    {{ "Verify your user" | translate}} 
+                    <br>
+                </span>
+
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <ion-label mode="md" position="floating">{{"Password" | translate}}</ion-label>
+                <ion-input mode="md" [type]="showPassword ? 'text': 'password'" [(ngModel)]="password" formControlName="inputPassword"></ion-input>
+                <ion-icon class="icon-yellow" slot="end" [name]="passwordToggleIcon" (click)="togglePassword()"></ion-icon>
+            </ion-item>
+                <span class="error-input"
+                *ngIf="isSubmitted && errorControl.inputPassword.errors?.required">
+                    {{ "Please enter your password" | translate}}
+                </span>
+                <span class="error-input"
+                    *ngIf="isSubmitted && errorControl.inputPassword.errors?.minlength">
+                    {{ "Verify your password" | translate}} 
+                    <br>
+                </span>
+        </ion-list>
+    </form>
+    </div>
+  
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <h2 class="ion-text-center">{{'sign_up_text_1' | translate}}<br>{{'sign_up_text_2' | translate}}</h2>
+   <!-- <ion-button size="large" expand="block" class="btn" (click)="verification()">{{'continue' | translate}}</ion-button> -->
+   <ion-button size="large" expand="block" class="btn" (click)="submitForm()">{{'continue' | translate}}</ion-button>    
+</ion-footer>

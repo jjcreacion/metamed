@@ -1,0 +1,159 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'post' | translate}} </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <div class="form animate__animated animate__fadeInUp">
+        <ion-list lines="none">
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <div class="img_box center_img">
+                        <img src="assets/imgs/user_profile.jpg" class="crop_img">
+                    </div>
+                    <div class="input_field">
+                        <ion-label mode="md" position="stacked">{{"describe_your_video" | translate}}</ion-label>
+                        <ion-textarea rows="7" mode="md" type="text"> </ion-textarea>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </div>
+
+    <div class="select_cover form animate__animated animate__fadeInUp">
+        <h2>{{'select_cover' | translate}}</h2>
+        <ion-list lines="none">
+            <ion-radio-group>
+                <div class="scroll_container">
+                    <div class="item_scroll">
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label>
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/video_2.png" class="crop_img" style="width: 131%;  height: 148%;">
+                                </div>
+                                <ion-icon class="zmdi zmdi-check-circle"></ion-icon>
+                            </ion-label>
+                            <ion-radio checked value="1"></ion-radio>
+                        </ion-item>
+                    </div>
+                    <div class="item_scroll">
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label>
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/video_2.png" class="crop_img" style="width: 183%; height: 202%; top: 68%; right: -75% !important;  left: unset !important;">
+                                </div>
+                                <ion-icon class="zmdi zmdi-check-circle"></ion-icon>
+                            </ion-label>
+                            <ion-radio value="2"></ion-radio>
+                        </ion-item>
+                    </div>
+                    <div class="item_scroll">
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label>
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/video_2.png" class="crop_img" style="width: 109%;  height: 137%;">
+                                </div>
+                                <ion-icon class="zmdi zmdi-check-circle"></ion-icon>
+                            </ion-label>
+                            <ion-radio value="3"></ion-radio>
+                        </ion-item>
+                    </div>
+                    <div class="item_scroll">
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label>
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/video_2.png" class="crop_img" style="width: 245%; height: 315%; top: 68%; right: -75% !important;  left: unset !important;">
+                                </div>
+                                <ion-icon class="zmdi zmdi-check-circle"></ion-icon>
+                            </ion-label>
+                            <ion-radio value="4"></ion-radio>
+                        </ion-item>
+                    </div>
+                    <div class="item_scroll">
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label>
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/video_2.png" class="crop_img" style="width: 131%;  height: 148%;">
+                                </div>
+                                <ion-icon class="zmdi zmdi-check-circle"></ion-icon>
+                            </ion-label>
+                            <ion-radio checked="true" value="5"></ion-radio>
+                        </ion-item>
+                    </div>
+                    <div class="item_scroll">
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label>
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/video_2.png" class="crop_img" style="width: 183%; height: 202%; top: 68%; right: -75% !important;  left: unset !important;">
+                                </div>
+                                <ion-icon class="zmdi zmdi-check-circle"></ion-icon>
+                            </ion-label>
+                            <ion-radio value="6"></ion-radio>
+                        </ion-item>
+                    </div>
+                    <div class="item_scroll">
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label>
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/video_2.png" class="crop_img" style="width: 109%;  height: 137%;">
+                                </div>
+                                <ion-icon class="zmdi zmdi-check-circle"></ion-icon>
+                            </ion-label>
+                            <ion-radio value="7"></ion-radio>
+                        </ion-item>
+                    </div>
+                    <div class="item_scroll">
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label>
+                                <div class="img_box center_img">
+                                    <img src="assets/imgs/video_2.png" class="crop_img" style="width: 245%; height: 315%; top: 68%; right: -75% !important;  left: unset !important;">
+                                </div>
+                                <ion-icon class="zmdi zmdi-check-circle"></ion-icon>
+                            </ion-label>
+                            <ion-radio value="8"></ion-radio>
+                        </ion-item>
+                    </div>
+                </div>
+            </ion-radio-group>
+        </ion-list>
+    </div>
+
+
+    <div class="post_settings form">
+        <ion-list lines="none">
+<!--
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner d-flex">
+                    <h3> {{'share_video_with' | translate}}</h3>
+                    <ion-select class="end" [(ngModel)]="share_video_with" interface="popover">
+                        <ion-select-option value="1">Public</ion-select-option>
+                        <ion-select-option value="2">Only Friends</ion-select-option>
+                        <ion-select-option value="3">Only Family</ion-select-option>
+                    </ion-select>
+                </div>
+            </ion-item>
+-->
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner d-flex">
+                    <h3> {{'comment_off' | translate}}</h3>
+                    <ion-toggle node="md" class="end"></ion-toggle>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner d-flex">
+                    <h3> {{'save_to_gallery' | translate}}</h3>
+                    <ion-toggle node="md" checked class="end"></ion-toggle>
+                </div>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button size="large" expand="block" class="btn" (click)="tabs()">{{'post_vodeo' | translate}}</ion-button>
+</ion-footer>
