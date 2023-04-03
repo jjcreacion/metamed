@@ -17,44 +17,44 @@
     <form [formGroup]="ionicForm" novalidate>
                   
         <div class="form">
-        <h2 class="d-flex"><span><ion-icon name="log-in-outline"></ion-icon>{{'Login' | translate}}</span>
+        <h2 class="d-flex"><span><ion-icon name="log-in-outline"></ion-icon>{{'login' | translate}}</span>
         </h2>
         
         <ion-list lines="none">
 
         <ion-item class="animate__animated animate__fadeInUp" lines="none">
-            <ion-label mode="md" position="floating">{{"Enter email or phone" | translate}}</ion-label>
+            <ion-label mode="md" position="floating">{{"enter_your_user_name_email_phone" | translate}}</ion-label>
             <ion-input mode="md" type="text" [(ngModel)]="user" formControlName="inputUser"></ion-input>
         </ion-item> 
         <span class="error-input"
             *ngIf="isSubmitted && errorControl.inputUser.errors?.required">
-                {{ "Please enter your user" | translate}}
+                {{ "please_enter_your_user" | translate }}
             </span>
             <span class="error-input"
                 *ngIf="isSubmitted && errorControl.inputUser.errors?.minlength">
-                {{ "Verify your user" | translate}} 
+                {{ "verify_your_user" | translate}} 
                 <br>
         </span>
 
         <ion-item class="animate__animated animate__fadeInUp" lines="none">
-            <ion-label mode="md" position="floating">{{"Enter password" | translate}}</ion-label>
+            <ion-label mode="md" position="floating">{{"enter_your_password" | translate}}</ion-label>
             <ion-input mode="md" [type]="showPassword ? 'text': 'password'" [(ngModel)]="password" formControlName="inputPassword"></ion-input>
             <ion-icon class="icon-yellow" slot="end" [name]="passwordToggleIcon" (click)="togglePassword()"></ion-icon>
         </ion-item> 
         <span class="error-input"
             *ngIf="isSubmitted && errorControl.inputPassword.errors?.required">
-                {{ "Please enter your password" | translate}}
+                {{ "enter_your_password" | translate}}
             </span>
             <span class="error-input"
                 *ngIf="isSubmitted && errorControl.inputPassword.errors?.minlength">
-                {{ "Verify your password" | translate}} 
+                {{ "verify_your_password" | translate}} 
                 <br>
         </span>
         
         </ion-list>
        
         <ion-button size="large" expand="block" class="btn animate__animated animate__fadeInUp" (click)="submitForm()" >{{'continue' | translate}}</ion-button>
-        <h3 class="ion-text-center"><span>You do not have an account?<a (click)="routeTo('/sign-up/')">{{' Sign up' | translate}}</a></span></h3>
+        <h3 class="ion-text-center"><span>{{"not_have_an_account" | translate}}<a (click)="routeTo('/sign-up/')"> {{'sign_up_now' | translate}}</a></span></h3>
 
             <div class="social_login ">
             <h3 class="ion-text-center animate__animated animate__fadeInUp">{{'or_continue_with' | translate}}</h3>

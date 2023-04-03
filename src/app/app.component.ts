@@ -48,12 +48,12 @@ export class AppComponent {
   }
 
   globalize(languagePriority) {
-    this.translate.setDefaultLang("en");
     let defaultLangCode = this.config.availableLanguages[0].code;
-    this.translate.use(languagePriority && languagePriority.length ? languagePriority : defaultLangCode);
+    //this.translate.use(languagePriority && languagePriority.length ? languagePriority : defaultLangCode);
     this.setDirectionAccordingly(languagePriority && languagePriority.length ? languagePriority : defaultLangCode);
+    this.translate.setDefaultLang("es");
   }
-
+s
   setDirectionAccordingly(lang: string) {
     switch (lang) {
       case 'ar': {

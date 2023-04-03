@@ -70,32 +70,32 @@
       
         <ion-list lines="none">
             <ion-item class="animate__animated animate__fadeInUp" lines="none">
-                <ion-label mode="md" position="floating">{{"Email" | translate}}</ion-label>
+                <ion-label mode="md" position="floating">{{"email" | translate}}</ion-label>
                 <ion-input mode="md" type="text" [(ngModel)]="email" formControlName="inputEmail"></ion-input>
             </ion-item>
                 <span class="error-input"
                 *ngIf="isSubmitted && errorControl.inputEmail.errors?.required">
-                    {{ "Please enter your user" | translate}}
+                    {{ "please_enter_your_user" | translate}}
                 </span>
                 <span class="error-input"
                     *ngIf="isSubmitted && errorControl.inputEmail.errors?.minlength">
-                    {{ "Verify your user" | translate}} 
+                    {{ "verify_your_user" | translate}} 
                     <br>
                 </span>
 
 
             <ion-item class="animate__animated animate__fadeInUp" lines="none">
-                <ion-label mode="md" position="floating">{{"Password" | translate}}</ion-label>
+                <ion-label mode="md" position="floating">{{"password" | translate}}</ion-label>
                 <ion-input mode="md" [type]="showPassword ? 'text': 'password'" [(ngModel)]="password" formControlName="inputPassword"></ion-input>
                 <ion-icon class="icon-yellow" slot="end" [name]="passwordToggleIcon" (click)="togglePassword()"></ion-icon>
             </ion-item>
                 <span class="error-input"
                 *ngIf="isSubmitted && errorControl.inputPassword.errors?.required">
-                    {{ "Please enter your password" | translate}}
+                    {{ "please_enter_your_user" | translate}}
                 </span>
                 <span class="error-input"
                     *ngIf="isSubmitted && errorControl.inputPassword.errors?.minlength">
-                    {{ "Verify your password" | translate}} 
+                    {{ "verify_your_user" | translate}} 
                     <br>
                 </span>
         </ion-list>

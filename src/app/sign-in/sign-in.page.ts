@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { AuthService } from '../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sign-in',
@@ -26,7 +27,8 @@ export class SignInPage implements OnInit {
     private router: ActivatedRoute,
     public formBuilder: FormBuilder,
     private auth : AuthService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private translate: TranslateService
     ) 
     {
       this.router.queryParams.subscribe(params => {
