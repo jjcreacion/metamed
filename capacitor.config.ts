@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'myApp',
+  appId: 'com.metamed.metamedapp',
+  appName: 'MetaMed',
   webDir: 'www',
   bundledWebRuntime: false,
   cordova: {
