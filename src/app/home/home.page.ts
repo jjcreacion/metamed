@@ -86,6 +86,10 @@ export class HomePage implements OnInit {
     });
   }
 
+  toProfile(){
+    this.route.navigate(['/edit-profile']);
+  }
+
   onSegmentChange() {
     this.videosToShow = this.tab == "related" ? this.videos1 : this.videos2;
     setTimeout(() => {

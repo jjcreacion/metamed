@@ -7,6 +7,8 @@ import { SplashScreen } from '@awesome-cordova-plugins/splash-screen/ngx';
 import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 import { Constants } from '../models/contants.models';
 import { MyEventService } from './services/my-event.service';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +19,7 @@ export class AppComponent {
   rtlSide = "left";
   selectedIndex: any;
   appPages: any;
+  items$: Observable<any[]>;
 
   constructor(@Inject(APP_CONFIG) public config: AppConfig, private platform: Platform, private navCtrl: NavController,
     private splashScreen: SplashScreen, private statusBar: StatusBar, private modalController: ModalController,

@@ -13,11 +13,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { VideoviewPageModule } from './videoview/videoview.module';
 import { CommentPageModule } from './comment/comment.module';
 import { AddvideoPageModule } from './addvideo/addvideo.module';
+import { AngularFireModule } from '@angular/fire/compat';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_CONFIG, BaseAppConfig } from './app.config';
-import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,6 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
+
 @NgModule({
     declarations: [AppComponent],
     imports: [

@@ -32,7 +32,7 @@ password: any;
     private route: Router,
     public formBuilder: FormBuilder,
     private auth : AuthService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
     ) { }
 
   ngOnInit() {
@@ -82,6 +82,7 @@ password: any;
         else if (res == "auth/weak-password") 
           this.showWarning("The password is too weak.");
         else if(res.additionalUserInfo.isNewUser){
+          
           this.regist = true
           this.route.navigateByUrl(`/sign-in?regist=${this.regist}`, {skipLocationChange: true}).then(() => {
             try {
@@ -97,6 +98,21 @@ password: any;
     }
     catch(error){
       console.log("error");
+    }
+
+  }
+
+  agregarPerfil(){
+
+    const perfil: any = {
+      biografia: "biografia",
+      correo: "correo",
+      facebook: "facebook",
+      instagram: "instagram",
+      nombre: "nombre",
+      telefono: "telefono",
+      twitter: "twitter",
+      uid: "uid"
     }
 
   }

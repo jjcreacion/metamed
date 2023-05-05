@@ -58,7 +58,7 @@ export class SignInPage implements OnInit {
       try{
         this.auth.login(this.user, this.password).then( resp => {
           if(resp!=null)
-            this.route.navigate([`./home/`]);
+            this.route.navigate([`./tabs/home/`]);
           else
             this.showError("User or Password incorrect");  
         });
@@ -76,7 +76,7 @@ export class SignInPage implements OnInit {
       this.auth.loginWithGoogle().then(res =>{
         if(res!=null){
         console.log("Register with Google");
-        this.route.navigate([`./home/`]);
+        this.route.navigate([`./tabs/home/`]);
         }
       });
     }
@@ -93,7 +93,7 @@ export class SignInPage implements OnInit {
       this.auth.loginWithFacebook().then(res =>{
         if(res!=null){
         console.log("Register with Facebook");
-        this.route.navigate([`./home/`]);
+        this.route.navigate([`./tabs/home/`]);
         }
       });
     }
