@@ -13,8 +13,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { VideoviewPageModule } from './videoview/videoview.module';
 import { CommentPageModule } from './comment/comment.module';
 import { AddvideoPageModule } from './addvideo/addvideo.module';
-import { AngularFireModule } from '@angular/fire/compat';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_CONFIG, BaseAppConfig } from './app.config';
@@ -22,6 +20,13 @@ import { environment } from 'src/environments/environment';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+
+//Firebase
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { provideStorage } from '@angular/fire/storage';
+import { getStorage } from 'firebase/storage';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -41,7 +46,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         AddvideoPageModule,
         BrowserAnimationsModule, // required animations module
         ToastrModule.forRoot(), // ToastrModule added
-        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireModule.initializeApp(environment.firebaseConfig), //inicialize firebase
+        AngularFirestoreModule,
+        AngularFireStorageModule,
+        provideStorage(() => getStorage()),
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

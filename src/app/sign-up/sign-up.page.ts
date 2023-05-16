@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OptionalDecorator, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonSlides } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
+import { PerfilService } from '../services/perfil.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -21,6 +22,7 @@ passwordToggleIcon = 'eye';
 slideOpts = {
   initialSlide: 0
 };
+
 regist = false
 msj:any;
 ionicForm: FormGroup;
@@ -33,6 +35,7 @@ password: any;
     public formBuilder: FormBuilder,
     private auth : AuthService,
     private toastr: ToastrService,
+    private perfilService: PerfilService
     ) { }
 
   ngOnInit() {
@@ -69,11 +72,13 @@ password: any;
   }
 
   async register(){
+
+    //const resp = await this.auth.register(this.email,this.password);
     
     try{
       this.auth.register(this.email,this.password).then(res =>{
         
-        if (res == "auth/email-already-in-use") 
+        if (res == "auth/email-already-in-use")  
           this.showWarning("The email address is already in use");
         else if (res == "auth/invalid-email") 
           this.showWarning("The email address is not valid.");
@@ -81,9 +86,10 @@ password: any;
           this.showWarning("Operation not allowed.");
         else if (res == "auth/weak-password") 
           this.showWarning("The password is too weak.");
-        else if(res.additionalUserInfo.isNewUser){
+        else if(res == null){
           
           this.regist = true
+
           this.route.navigateByUrl(`/sign-in?regist=${this.regist}`, {skipLocationChange: true}).then(() => {
             try {
               this.route.navigate([`/sign-in?regist=${this.regist}`]);
@@ -91,30 +97,34 @@ password: any;
               console.log("nada sigue caminando")
             }
           });
-        }
+        } 
         
         console.log(res);
       });
     }
     catch(error){
       console.log("error");
-    }
-
+    } 
   }
 
   agregarPerfil(){
-
+    
     const perfil: any = {
-      biografia: "biografia",
-      correo: "correo",
-      facebook: "facebook",
-      instagram: "instagram",
-      nombre: "nombre",
-      telefono: "telefono",
-      twitter: "twitter",
-      uid: "uid"
+      biografia: "Biografia",
+      correo: this.email,
+      facebook: "",
+      instagram: "",
+      nombre: "Nombre",
+      telefono: "",
+      twitter: "",
+      uid: "",
     }
-
+   
+    this.perfilService.agregarPerfil(perfil).then(() => {
+      console.log("Agregado");
+    }).catch(error => {
+      console.log(error);
+    })
   }
   
   get errorControl() {

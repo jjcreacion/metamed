@@ -2,13 +2,6 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
- {
-    path: '',  redirectTo: 'sign-in', pathMatch: 'full'
-  },    
-  {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },
   {
     path: 'addvideo',
     loadChildren: () => import('./addvideo/addvideo.module').then( m => m.AddvideoPageModule)
@@ -90,10 +83,6 @@ const routes: Routes = [
     loadChildren: () => import('./select-language/select-language.module').then( m => m.SelectLanguagePageModule)
   },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: 'social-login',
     loadChildren: () => import('./social-login/social-login.module').then( m => m.SocialLoginPageModule)
   },
@@ -108,6 +97,17 @@ const routes: Routes = [
   {
     path: 'vt-popup',
     loadChildren: () => import('./vt-popup/vt-popup.module').then( m => m.VtPopupPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: '',  redirectTo: 'sign-in', pathMatch: 'full'
+  },    
+  {
+    path: '',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
 ];
 @NgModule({

@@ -36,11 +36,11 @@
 
     <div class="profile_box ion-text-center">
         <div class="img_box center_img animate__animated animate__fadeInUp">
-            <img src="assets/imgs/user_profile.jpg" class="crop_img">
+            <img src="{{srcImagen}}" class="crop_img">
         </div>
         <div class="animate__animated animate__fadeInUp" style="width: 100%">
-            <h2>Samantha Smith</h2>
-            <h3>@imsamanthasmith</h3>
+            <h2>{{ perfilRef[0]?.nombre }}</h2>
+            <h3>{{ perfilRef[0]?.correo }}</h3>
             <div class="icon_box d-flex">
                 <ion-icon class="zmdi zmdi-facebook animate__animated animate__zoomIn"></ion-icon>
                 <ion-icon class="zmdi zmdi-twitter animate__animated animate__zoomIn"></ion-icon>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="about">
-                <p>Content creeater and food lover.<br>Love to make food making videos this app</p>
+                <p>{{ perfilRef[0]?.biografia }}</p>
             </div>
         </div>
         <div class="btn_box animate__animated animate__fadeInUp">

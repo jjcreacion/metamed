@@ -5,6 +5,7 @@ import { CommentPage } from '../comment/comment.page';
 import { APP_CONFIG, AppConfig } from '../app.config';
 import { Video } from 'src/models/video.models';
 import { BuyappalertPage } from '../buyappalert/buyappalert.page';
+import  firebase from 'firebase/compat/app';
 
 @Component({
   selector: 'app-home',
