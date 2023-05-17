@@ -24,6 +24,10 @@ export class AddvideoPage implements OnInit {
     this.route.navigate(['./filter']);
   } 
  
+ add_video_galery() {
+    this.modalController.dismiss();     
+     this.route.navigate(['./explore']);
+  }
 
  buyappalert () {
     this.modalController
