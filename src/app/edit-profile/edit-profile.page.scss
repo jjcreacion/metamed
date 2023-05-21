@@ -243,3 +243,8 @@ bodY {
       transform: scale(0);
     }
   }
+  
+.can-go-back > ion-header ion-back-button {
+    display: block;
+    color: red;
+}

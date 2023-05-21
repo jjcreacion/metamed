@@ -2,21 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-
+ 
 import { IonicModule } from '@ionic/angular';
 
-import { ExplorePageRoutingModule } from './explore-routing.module';
+import { AddvideoPageRoutingModule } from './addvideo-routing.module';
 
-import { ExplorePage } from './explore.page';
+import { AddvideoPage } from './addvideo.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-     TranslateModule,    
-    ExplorePageRoutingModule
+    TranslateModule,   
+    AddvideoPageRoutingModule
   ],
-  declarations: [ExplorePage]
+  declarations: [AddvideoPage]
 })
-export class ExplorePageModule {}
+export class AddvideoPageModule {}

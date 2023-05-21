@@ -1,38 +1,50 @@
 <ion-header class="bg_transparent">
-    <ion-toolbar>
-        <ion-title>
-            <div class="d-flex" style="height: 60px;">
-                <ion-icon class="zmdi zmdi-close" (click)="dismiss()"></ion-icon>
-                <div class="buy_this_app end" *ngIf="config.demoMode" (click)="buyappalert()">
-                    <h2>
-                        <!--                    <ion-icon class="zmdi zmdi-mall"></ion-icon>-->
-                        {{"buy_this_app" | translate}}
-                    </h2>
-                </div>
-            </div>
-        </ion-title>
-    </ion-toolbar>
+     <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>   
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content fullscreen class="bg_color">
     <div class="camera_view">
-        <img src="assets/imgs/video_2.png">
+        <img src="assets/imgs/video_3.png">
     </div>
+
+   <div class="profile_box ion-text-center">
+         <div class="img_box center_img animate__animated animate__fadeInUp">
+            <img src="{{srcImagen}}" class="crop_img">
+         </div>
+         <div class="animate__animated animate__fadeInUp" style="width: 100%">
+            <h2>{{ perfilRef[0]?.nombre }}</h2>
+            <h3>{{ perfilRef[0]?.correo }}</h3>  
+        </div>     
+    </div>
+
+   <section>
+       <form action="" autocomplete="off" enctype="multipart/form-data">
+        <p>Upload File</p>
+         <div>
+             <input type="file" (change)="loadVideoFromDevice($event)" id="upload" style="display: none;" accept="video/*">
+             <label for="upload">{{ textLabel }}</label>    
+         </div>  
+         <button *ngIf="filesize > 0 && !loading" class="upload" (click)="cargarVideo()"><span>&#8682; Upload</span></button>
+         <button *ngIf="loading" class="upload"><span class="uploading">Uploading......</span></button>
+         <button *ngIf="loading" class="cancel" (click)="cancel()">Cancel</button>
+         <div *ngIf="filesize > 0" class="pr">
+            <strong >
+                <h4 class="ex">{{ extension }}</h4>
+                <h4 class="size">{{ sizevideo }}</h4>
+            </strong>
+            <progress value="0" max="100" value="{{ porcentaje }}"></progress>
+            <span class="progress-indicator"></span>
+         </div>   
+         <div *ngIf="!loading && filesize == 0" style="text-align: center;">
+            <img src="assets/imgs/vt_popup_img.png">
+         </div>
+         
+       </form>
+   </section>
+
 </ion-content>
 
-<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
-    <ion-row class="ion-text-center">
-        <ion-col size="4">
-            <ion-icon class="zmdi zmdi-camera-front"></ion-icon>
-        </ion-col>
-        <ion-col size="4">
-            <ion-icon class="zmdi zmdi-videocam animate__animated animate__zoomIn" (click)="add_video_filter()"></ion-icon>
-        </ion-col>
-        <ion-col size="4">
-            <ion-icon class="zmdi zmdi-collection-folder-image" (click)="add_video_galery()"></ion-icon>
-        </ion-col>
-    </ion-row>
-    <h2 class="ion-no-border">
-        <ion-icon class="zmdi zmdi-chevron-up"></ion-icon>{{'swip_up_for_gallery' | translate}}
-    </h2>
-</ion-footer>

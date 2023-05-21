@@ -21,15 +21,22 @@ export class PerfilService {
   }
   
   consultPerfil(id: string): Observable<any> {
-   return this.firestore.collection('perfil', ref => ref.where('uid','==',id)).snapshotChanges();
+   return this.firestore
+   .collection('perfil', ref => ref.where('uid','==',id))
+   .snapshotChanges();
   }
 
   consultPerfil2(id: string): Observable<any> {
-    return this.firestore.collection('perfil', ref => ref.where('uid','==',id)).valueChanges();
+    return this.firestore
+    .collection('perfil', ref => ref.where('uid','==',id))
+    .valueChanges();
   }
 
   updatePerfil(id: string, data:any): Promise<any> {
-    return this.firestore.collection('perfil').doc(id).update(data);
+    return this.firestore
+    .collection('perfil')
+    .doc(id)
+    .update(data);
   }
     
 }

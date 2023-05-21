@@ -16,8 +16,12 @@
             <ion-label>{{'explore' | translate}}</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button (click)="add_video()" class="add_video_button">
-          <h3><img src="assets/imgs/ic_add.png"></h3>
+        <ion-tab-button tab="addvideo">
+            <div class="img_box">
+                <img src="assets/imgs/ic_add.png" class="before">
+                <img src="assets/imgs/ic_add.png" class="after">
+            </div>
+          <ion-label>{{'add_video' | translate}}</ion-label>
         </ion-tab-button>
 
         <ion-tab-button tab="notification">

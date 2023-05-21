@@ -6,6 +6,11 @@ import { APP_CONFIG, AppConfig } from '../app.config';
 import { Video } from 'src/models/video.models';
 import { BuyappalertPage } from '../buyappalert/buyappalert.page';
 import  firebase from 'firebase/compat/app';
+import { PerfilService } from '../services/perfil.service';
+import { VideoService } from '../services/video.service';
+import { ref, uploadBytes } from 'firebase/storage';
+import { Storage } from '@angular/fire/storage';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +21,8 @@ export class HomePage implements OnInit {
   @ViewChild('videoslider', { static: true }) slides: IonSlides;
 
   tab: string = "related";
+  videoRef: any[] = [];
+  rutasRef: any[] = [];
   favorite_icon = false;
   favorite_icon_2 = false;
   slideOptions1 = { direction: 'vertical' };
@@ -24,9 +31,45 @@ export class HomePage implements OnInit {
   videos2: Array<Video>;
   currentVideoIndex: number;
   videoElement: any;
+  vids: any[] = [];
+  urls: string[] = []; 
 
-  constructor(@Inject(APP_CONFIG) public config: AppConfig, private route: Router, private modalController: ModalController) {
+  constructor(
+    private perfilService: PerfilService,
+    private videoService: VideoService,
+    @Inject(APP_CONFIG) public config: AppConfig,
+    private route: Router, 
+    private modalController: ModalController,
+    private storage: AngularFireStorage,
+    )
+   {
+
+     this.videoService.listarVideos().subscribe(data => {
+      this.videoRef = [];
+      this.rutasRef = [];
+      
+       data.forEach((element: any) => {
+        this.videoRef.push({
+          id: element.payload.doc?.id,
+          ...element.payload.doc?.data()
+        })
+      });
+       
+       this.videoRef.forEach((element: any)=>{
+         const ref = this.storage.ref(element.ruta);
+          ref.getDownloadURL().subscribe(url => { 
+            this.urls.push(url);
+            console.log("Rutas " + this.urls);
+          });   
+       })
+        console.log("Rutas " + this.urls);
+     }) 
+    
+    //this.urls = ['assets/video/vid1.mp4', 'assets/video/vid2.mp4', 'assets/video/vid3.mp4', 'assets/video/vid4.mp4'];
     let vids = [new Video("assets/video/vid1.mp4"), new Video("assets/video/vid2.mp4"), new Video("assets/video/vid3.mp4"), new Video("assets/video/vid4.mp4")];
+   
+    //let vids = this.urls.map(url => new Video(url));
+
     this.videos1 = new Array<Video>();
     this.videos2 = new Array<Video>();
     for (let i = 0; i < 5; i++) {
@@ -47,7 +90,6 @@ export class HomePage implements OnInit {
       if (!this.currentVideoIndex || this.currentVideoIndex != -1) {
         if ((event as any).target && (event as any).target.currentTime && (event as any).target.duration) {
           this.videosToShow[this.currentVideoIndex].progress = String((Number((event as any).target.currentTime) * 100) / Number((event as any).target.duration));
-          console.log(("progress_" + this.currentVideoIndex), this.videosToShow[this.currentVideoIndex].progress);
           if ((event as any).target.currentTime == (event as any).target.duration) {
             this.slides.isEnd().then(isLast => {
               if (isLast) {

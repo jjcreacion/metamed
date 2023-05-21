@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./addvideo/addvideo.module').then( m => m.AddvideoPageModule)
   },
   {
+    path: 'tabs/addvideo',
+    loadChildren: () => import('./addvideo/addvideo.module').then( m => m.AddvideoPageModule)
+  },
+  {
     path: 'filter',
     loadChildren: () => import('./filter/filter.module').then( m => m.FilterPageModule)
   },
