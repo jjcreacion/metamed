@@ -28,9 +28,10 @@
                 <div class="video_option">
                     <div class="details d-flex">
                         <div class="text_box">
-                            <h2 (click)="user_profile()">@emiliwilliamson</h2>
+                            <h2 (click)="user_profile()">{{ perfil[currentVideoIndex]?.nombre}}</h2>
                             <p (click)="videos_list()">
-                                Dance like no one watching #dancetime #dancigqueen
+                                <!--Dance like no one watching #dancetime #dancigqueen-->
+                                {{ perfil[currentVideoIndex]?.correo}}
                                 <i>{{'see_more' | translate}}</i>
                             </p>
                         </div>
@@ -52,7 +53,7 @@
                             </h3>
                             <div class="user_profile">
                                 <div class="img_box center_img">
-                                    <img src="assets/imgs/2.png" class="crop_img">
+                                    <img src="{{ srcImagen[currentVideoIndex] }}" class="crop_img">
                                 </div>
                                 <ion-icon class="zmdi zmdi-plus"></ion-icon>
                             </div>

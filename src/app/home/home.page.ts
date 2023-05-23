@@ -17,12 +17,14 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
+
 export class HomePage implements OnInit {
   @ViewChild('videoslider', { static: true }) slides: IonSlides;
 
   tab: string = "related";
   videoRef: any[] = [];
   rutasRef: any[] = [];
+  srcImagen: any[] = [];
   favorite_icon = false;
   favorite_icon_2 = false;
   slideOptions1 = { direction: 'vertical' };
@@ -33,7 +35,10 @@ export class HomePage implements OnInit {
   videoElement: any;
   vids: any[] = [];
   urls: string[] = []; 
+  perfil: any[] = []; 
+  temp: any[] = [];
   promises = [];
+
   constructor(
     private perfilService: PerfilService,
     private videoService: VideoService,
@@ -67,6 +72,28 @@ export class HomePage implements OnInit {
       }); 
      
        this.videoRef.forEach((element: any) => {
+        
+        this.perfilService.consultPerfil(element.uid).subscribe(resp => {
+          this.temp = [];   
+
+            resp.forEach((elmnt: any) => {
+            this.temp.push({
+              id: elmnt.payload.doc?.id,
+              ...elmnt.payload.doc?.data()
+            })
+            this.perfil = this.perfil.concat(this.temp);
+
+            const ref0 = this.storage.ref(this.temp[0].imagenperfil);
+            ref0.getDownloadURL().subscribe(url => { 
+              this.srcImagen = this.srcImagen.concat(url);
+              //console.log("SRC "+this.srcImagen)
+            }) 
+
+          });
+            
+        });
+        
+       
          const ref = this.storage.ref(element.ruta);
          ref.getDownloadURL().subscribe(url => { 
             vids = new Video(url);
@@ -76,29 +103,13 @@ export class HomePage implements OnInit {
             if(cont == tam){  
               this.videosToShow = this.videos1;
               this.onSegmentChange2();
-              console.log("Fin del recorrido");
+              //console.log("Fin del recorrido");
            }               
          })
        });
 
-     /* const ref = this.storage.ref(this.videoRef[0].ruta);
-      ref.getDownloadURL().subscribe(url => { 
-        vids = new Video(url);
-        console.log("vids = "+vids.src);
-        this.videos1 = this.videos1.concat(vids);
-        this.videos2 = this.videos2.concat(vids);
-
-        this.videosToShow = this.videos1;
-        
-        this.onSegmentChange2();
-       }); */
-
-
      })
     
-   
-    let vids2 = new Video("assets/video/vid1.mp4");
-    console.log("vids2 = "+vids2.src);
   }
 
   setupVideoElement() {
@@ -163,7 +174,7 @@ export class HomePage implements OnInit {
       this.slides.slideTo(0);
       this.slideChanged1();
     }, 100);*/
-    console.log("Cambiar");
+    //console.log("Cambiar");
   }
 
  onSegmentChange2() {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { VideoviewPage } from '../videoview/videoview.page';  
 import { ScrollDetail } from '@ionic/core';
@@ -29,18 +29,34 @@ export class MyProfilePage implements OnInit {
   constructor(
     @Inject(APP_CONFIG) public config: AppConfig, 
     private route: Router, 
+    private router: ActivatedRoute,
     private modalController: ModalController, 
     private navCtrl: NavController,
     private perfilService: PerfilService,
     private storage: AngularFireStorage
-    ) { }
+
+    ) {
+
+      this.router.queryParams.subscribe(params => {
+        if(params.cache) {
+         this.cargarPerfil();
+         console.log("Cache");
+         }
+        
+      });
+
+     }
 
   ngOnInit() {
-    var user = firebase.auth().currentUser;
+    this.cargarPerfil();
+  }
+
+ cargarPerfil(){
+  console.log("Cargar perfil");
+  var user = firebase.auth().currentUser;
 
     this.perfilService.consultPerfil(user.uid).subscribe(data => {
       this.perfilRef = [];
-      console.log("User Id "+user.uid)
 
        data.forEach((element: any) => {
         this.perfilRef.push({
@@ -58,8 +74,7 @@ export class MyProfilePage implements OnInit {
 
     }); 
 
-  }
-
+ }
 
  showToolbar = false; 
  onScroll(event: CustomEvent<ScrollDetail>) {
