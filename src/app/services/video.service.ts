@@ -22,8 +22,16 @@ export class VideoService {
 
    listarVideos(): Observable<any> {
      return this.firestore
-     .collection('video')
+     .collection('video', ref => ref.orderBy('fecha', 'desc'))
      .snapshotChanges();
     }
+
+   listarAleatorio(): Observable<any> {
+      const random = Math.random() * 100;
+      console.log("Remadom "+random);
+      return this.firestore
+        .collection('video', ref => ref.orderBy('fecha').startAt(random).limit(1))
+        .snapshotChanges();
+    } 
 
 }

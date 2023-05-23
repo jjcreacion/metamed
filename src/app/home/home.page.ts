@@ -33,7 +33,7 @@ export class HomePage implements OnInit {
   videoElement: any;
   vids: any[] = [];
   urls: string[] = []; 
-
+  promises = [];
   constructor(
     private perfilService: PerfilService,
     private videoService: VideoService,
@@ -43,41 +43,62 @@ export class HomePage implements OnInit {
     private storage: AngularFireStorage,
     )
    {
+     this.selectVideo();
+   }
 
-     this.videoService.listarVideos().subscribe(data => {
+
+  selectVideo(){
+   
+    let vids;
+    let tam = 0;
+    let cont = 0;
+    this.videos1 = new Array<Video>();
+    this.videos2 = new Array<Video>();  
+
+    this.videoService.listarVideos().subscribe(data => {
       this.videoRef = [];
-      this.rutasRef = [];
-      
+     
        data.forEach((element: any) => {
         this.videoRef.push({
           id: element.payload.doc?.id,
           ...element.payload.doc?.data()
         })
-      });
-       
-       this.videoRef.forEach((element: any)=>{
+        tam++;
+      }); 
+     
+       this.videoRef.forEach((element: any) => {
          const ref = this.storage.ref(element.ruta);
-          ref.getDownloadURL().subscribe(url => { 
-            this.urls.push(url);
-            console.log("Rutas " + this.urls);
-          });   
-       })
-        console.log("Rutas " + this.urls);
-     }) 
+         ref.getDownloadURL().subscribe(url => { 
+            vids = new Video(url);
+            this.videos1 = this.videos1.concat(vids);
+            this.videos2 = this.videos2.concat(vids);
+            cont++;
+            if(cont == tam){  
+              this.videosToShow = this.videos1;
+              this.onSegmentChange2();
+              console.log("Fin del recorrido");
+           }               
+         })
+       });
+
+     /* const ref = this.storage.ref(this.videoRef[0].ruta);
+      ref.getDownloadURL().subscribe(url => { 
+        vids = new Video(url);
+        console.log("vids = "+vids.src);
+        this.videos1 = this.videos1.concat(vids);
+        this.videos2 = this.videos2.concat(vids);
+
+        this.videosToShow = this.videos1;
+        
+        this.onSegmentChange2();
+       }); */
+
+
+     })
     
-    //this.urls = ['assets/video/vid1.mp4', 'assets/video/vid2.mp4', 'assets/video/vid3.mp4', 'assets/video/vid4.mp4'];
-    let vids = [new Video("assets/video/vid1.mp4"), new Video("assets/video/vid2.mp4"), new Video("assets/video/vid3.mp4"), new Video("assets/video/vid4.mp4")];
    
-    //let vids = this.urls.map(url => new Video(url));
-
-    this.videos1 = new Array<Video>();
-    this.videos2 = new Array<Video>();
-    for (let i = 0; i < 5; i++) {
-      this.videos1 = this.videos1.concat(vids);
-      this.videos2 = this.videos2.concat(vids);
-    }
-
-    this.videosToShow = this.videos1;
+    let vids2 = new Video("assets/video/vid1.mp4");
+    console.log("vids2 = "+vids2.src);
   }
 
   setupVideoElement() {
@@ -85,6 +106,7 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
+    
     this.setupVideoElement();
     this.videoElement.ontimeupdate = (event) => {
       if (!this.currentVideoIndex || this.currentVideoIndex != -1) {
@@ -93,7 +115,7 @@ export class HomePage implements OnInit {
           if ((event as any).target.currentTime == (event as any).target.duration) {
             this.slides.isEnd().then(isLast => {
               if (isLast) {
-                this.onSegmentChange();
+                this.onSegmentChange2();
               } else {
                 this.slides.slideNext();
               }
@@ -101,7 +123,7 @@ export class HomePage implements OnInit {
           }
         }
       }
-    };
+    }; 
   }
 
   ionViewWillLeave() {
@@ -109,11 +131,12 @@ export class HomePage implements OnInit {
   }
 
   ionViewDidEnter() {
-    this.onSegmentChange();
+    this.onSegmentChange2();
   }
 
   slideChanged1() {
-    this.slides.getActiveIndex().then(curSliderIndex => {
+
+     this.slides.getActiveIndex().then(curSliderIndex => {
       console.log("getActiveIndex", curSliderIndex);
       if (this.currentVideoIndex != curSliderIndex) {
         //this.pausePlaying();
@@ -126,7 +149,7 @@ export class HomePage implements OnInit {
         this.videoElement.autoplay = true;
         this.videoElement.load();
       }
-    });
+    }); 
   }
 
   toProfile(){
@@ -134,7 +157,17 @@ export class HomePage implements OnInit {
   }
 
   onSegmentChange() {
-    this.videosToShow = this.tab == "related" ? this.videos1 : this.videos2;
+    /* this.videosToShow = this.tab == "related" ? this.videos1 : this.videos2;
+    setTimeout(() => {
+      this.currentVideoIndex = -1;
+      this.slides.slideTo(0);
+      this.slideChanged1();
+    }, 100);*/
+    console.log("Cambiar");
+  }
+
+ onSegmentChange2() {
+     this.videosToShow = this.tab == "related" ? this.videos1 : this.videos2;
     setTimeout(() => {
       this.currentVideoIndex = -1;
       this.slides.slideTo(0);
