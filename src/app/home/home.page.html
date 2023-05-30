@@ -22,7 +22,7 @@
 </ion-header>
 <ion-content class="bg_color">
     <div class="video_view">
-        <video id="myvideo" class="videoPlayer" poster="assets/imgs/25.gif"></video>
+        <video id="myvideo" class="videoPlayer" poster="assets/imgs/25.gif" playsinline></video>
         <ion-slides [options]="slideOptions1" #videoslider (ionSlideDidChange)="slideChanged1()" (ionSlideTouchEnd)="resumePlaying1()" (ionSlideTouchStart)="pausePlaying1()">
             <ion-slide *ngFor="let video of videosToShow; let i = index;">
                 <div class="video_option">

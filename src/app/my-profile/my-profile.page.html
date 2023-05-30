@@ -2,18 +2,35 @@
     <!-- <ion-toolbar class="show-background" [class.show-background]="showToolbar"> -->
     <ion-toolbar class="show-background">
         <ion-buttons slot="start">
-            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+          <ion-back-button text="" defaultHref="/tabs/home"></ion-back-button>
         </ion-buttons>
         <ion-title>
             <div class="title_inner d-flex">
                 <div class="buy_this_app" *ngIf="config.demoMode" (click)="buyappalert()">
                     <h2>
-                        <!--                    <ion-icon class="zmdi zmdi-mall"></ion-icon>-->
+                        <!-- <ion-icon class="zmdi zmdi-mall"></ion-icon>-->
                         {{"buy_this_app" | translate}}
                     </h2>
                 </div>
-                <ion-icon class="zmdi zmdi-more-vert end ion-text-end" (click)="setViewType('active')"></ion-icon>
+               
+               <!-- <ion-icon class="zmdi zmdi-more-vert end ion-text-end" (click)="setViewType('active')"></ion-icon> -->
+               
+               <ion-icon class="zmdi zmdi-more-vert end ion-text-end" id="popover-button"></ion-icon>
+                <ion-popover trigger="popover-button" [dismissOnSelect]="true">
+                  <ng-template>
+                    <ion-content>
+                   
+                        <h2 (click)="help()">{{'help' | translate}}</h2>
+                        <h2 (click)="terms_conditions()">{{'terms_of_use' | translate}}</h2>
+                        <h2 (click)="select_language()">{{'change_language' | translate}}</h2>
+                        <h2>{{'rate_app' | translate}}</h2>
+                        <h2>{{'clear_cache' | translate}}</h2>
+                        <h2 (click)="sign_in()">{{'logout' | translate}}</h2>
+                    </ion-content>
+                  </ng-template>
+                </ion-popover>
             </div>
+
         </ion-title>
     </ion-toolbar>
 </ion-header>
@@ -21,10 +38,11 @@
 <!-- <ion-content fullscreeen [scrollEvents]="true" (ionScroll)="onScroll($event)"> -->
 <ion-content fullscreeen>
 
-    <div [ngClass]="viewType == 'active' ? 'option_container active':'option_container'" (click)="setViewType(null)">
-        <div class="option" (click)="setViewType(null)">
-            <!-- 			<h2>{{'profile_setting' | translate}}</h2>-->
-            <h2>{{'share_profile' | translate}}</h2>
+    
+   <!--     <div [ngClass]="viewType == 'active' ? 'option_container active':'option_container'" (click)="setViewType(null)">
+    <div class="option" (click)="setViewType(null)">
+            <!--            <h2>{{'profile_setting' | translate}}</h2>-->
+         <!--   <h2>{{'share_profile' | translate}}</h2>
             <h2 (click)="help()">{{'help' | translate}}</h2>
             <h2 (click)="terms_conditions()">{{'terms_of_use' | translate}}</h2>
             <h2 (click)="select_language()">{{'change_language' | translate}}</h2>
@@ -32,14 +50,16 @@
             <h2>{{'clear_cache' | translate}}</h2>
             <h2 (click)="sign_in()">{{'logout' | translate}}</h2>
         </div>
-    </div>
+    </div> -->
+
+
 
     <div class="profile_box ion-text-center">
         <div class="img_box center_img animate__animated animate__fadeInUp">
             <img src="{{srcImagen}}" class="crop_img">
         </div>
         <div class="animate__animated animate__fadeInUp" style="width: 100%">
-            <h2>{{ perfilRef[0]?.nombre }}</h2>
+            <h1>{{ perfilRef[0]?.nombre }}</h1>
             <h3>{{ perfilRef[0]?.correo }}</h3>
             <div class="icon_box d-flex">
                 <ion-icon class="zmdi zmdi-facebook animate__animated animate__zoomIn"></ion-icon>

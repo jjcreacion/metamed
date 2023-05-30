@@ -29,6 +29,7 @@ ion-header ion-toolbar {
     }
 }
 
+
 .buy_this_app {
     background: var(--primary);
     position: relative;
@@ -56,9 +57,19 @@ ion-header ion-toolbar {
     }
 }
 
+h2 {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    margin: 0.8rem;
+    width: fit-content;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 0;
+}
+
 ion-content {
     &::after {
-        content: "";
         position: fixed;
         bottom: 0;
         left: 0;
@@ -123,14 +134,20 @@ ion-content {
 
 .profile_box {
     color: var(--white);
-    padding: 68px 10px 10px 10px;
+    display: block;
+    position: relative;  
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 60px;
+
     .img_box {
-        width: 73px;
-        height: 73px;
+        width: 72px;
+        height: 72px;
         border-radius: 50%;
         margin: 0 auto;
-        margin-bottom: 20px;
     }
+
     h2 {
         margin: 0;
         font-size: 1.2rem;

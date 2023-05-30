@@ -48,7 +48,7 @@ export class HomePage implements OnInit {
     private storage: AngularFireStorage,
     )
    {
-     this.selectVideo();
+     
    }
 
 
@@ -103,7 +103,8 @@ export class HomePage implements OnInit {
             if(cont == tam){  
               this.videosToShow = this.videos1;
               this.onSegmentChange2();
-              //console.log("Fin del recorrido");
+              console.log("Fin del recorrido");
+              this.videoElmt();
            }               
          })
        });
@@ -116,8 +117,11 @@ export class HomePage implements OnInit {
     if (!this.videoElement) this.videoElement = (<HTMLVideoElement>document.getElementById('myvideo'));
   }
 
-  ngOnInit() {
-    
+  ngOnInit() { 
+     this.selectVideo();
+  }
+
+  videoElmt(){
     this.setupVideoElement();
     this.videoElement.ontimeupdate = (event) => {
       if (!this.currentVideoIndex || this.currentVideoIndex != -1) {
@@ -134,7 +138,7 @@ export class HomePage implements OnInit {
           }
         }
       }
-    }; 
+    };
   }
 
   ionViewWillLeave() {
